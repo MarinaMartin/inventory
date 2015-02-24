@@ -1,3 +1,5 @@
+<p>Enter the information you know about each transaction our customers can conduct with VA. Leave blank any information you do not know.</p>
+
 <%= form_for(@transaction) do |f| %>
   <% if @transaction.errors.any? %>
     <div id="error_explanation">
@@ -43,8 +45,8 @@
     <%= f.text_area :determine_eligibility %>
   </div>
   <div class="field">
-    <%= f.label :phone, 'Can this transaction be conducted over the phone?' %><br>
     <%= f.check_box :phone %>
+    <%= f.label :phone, 'Check here if this transaction be conducted over the phone' %><br>
   </div>
   <div class="field">
     <%= f.label :phone_number, 'Phone number' %><br>
@@ -55,8 +57,8 @@
     <%= f.text_field :call_volume %>
   </div>
   <div class="field">
-    <%= f.label :online, 'Check if this transaction be conducted online?' %><br>
     <%= f.check_box :online %>
+    <%= f.label :online, 'Check here if this transaction be conducted online' %><br>
   </div>
   <div class="field">
     <%= f.label :url, 'URL to conduct transaction' %><br>
@@ -67,16 +69,16 @@
     <%= f.text_field :digital_volume %>
   </div>
   <div class="field">
-    <%= f.label :in_person_ro, 'Check if this transaction be conducted in person at an RO?' %><br>
     <%= f.check_box :in_person_ro %>
+    <%= f.label :in_person_ro, 'Check if this transaction be conducted in person at an RO' %><br>
   </div>
   <div class="field">
-    <%= f.label :in_person_mc, 'Check if this transaction be conducted in person at an MC?' %><br>
     <%= f.check_box :in_person_mc %>
+    <%= f.label :in_person_mc, 'Check if this transaction be conducted in person at an MC' %><br>
   </div>
   <div class="field">
-    <%= f.label :by_mail, 'Check if this transaction be conducted by mail?' %><br>
     <%= f.check_box :by_mail %>
+    <%= f.label :by_mail, 'Check if this transaction be conducted by mail' %><br>
   </div>
   <div class="field">
     <%= f.label :mail_volume, 'Mail volume (per month)' %><br>
