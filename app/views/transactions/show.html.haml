@@ -1,0 +1,87 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @transaction.name
+%p
+  %b Description:
+  = @transaction.description
+%p
+  %b Audience:
+  = @transaction.audience
+%p
+  %b Eligibility criteria:
+  = @transaction.eligibility_criteria
+%p
+  %b Determine eligibility:
+  = @transaction.determine_eligibility
+%p
+  %b Phone:
+  = @transaction.phone
+%p
+  %b Phone number:
+  = @transaction.phone_number
+%p
+  %b Call volume:
+  = @transaction.call_volume
+%p
+  %b Online:
+  = @transaction.online
+%p
+  %b Url:
+  = @transaction.url
+%p
+  %b Digital volume:
+  = @transaction.digital_volume
+%p
+  %b In person ro:
+  = @transaction.in_person_ro
+%p
+  %b In person mc:
+  = @transaction.in_person_mc
+%p
+  %b By mail:
+  = @transaction.by_mail
+%p
+  %b Mail volume:
+  = @transaction.mail_volume
+%p
+  %b Form:
+  = @transaction.form
+%p
+  %b Details url:
+  = @transaction.details_url
+%p
+  %b Office:
+  = @transaction.office
+%p
+  %b Resolution time:
+  = @transaction.resolution_time
+%p
+  %b Resolution time (95th percentile):
+  = @transaction.resolution_time_95th
+%p
+  %b Resolution rate:
+  = @transaction.resolution_rate
+%p
+  %b First time resolution rate:
+  = @transaction.first_time_resolution_rate
+%p
+  %b Request volume:
+  = @transaction.request_volume
+%p
+  %b Keywords:
+  = @transaction.keywords
+%p
+  %b Search on va:
+  = @transaction.search_on_va
+%p
+  %b Search on google:
+  = @transaction.search_on_google
+%p
+  %b Man hours:
+  = @transaction.man_hours
+
+= link_to 'Edit', edit_transaction_path(@transaction)
+\|
+= link_to 'Back', transactions_path

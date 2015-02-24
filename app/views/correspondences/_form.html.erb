@@ -1,0 +1,79 @@
+<%= form_for(@correspondence) do |f| %>
+  <% if @correspondence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@correspondence.errors.count, "error") %> prohibited this correspondence from being saved:</h2>
+
+      <ul>
+      <% @correspondence.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div><br />
+  
+  <div class="field">
+    <%= f.label :triggers, 'Trigger(s)', :class => 'control-label' %><br/>
+  <% Correspondence::TRIGGERS.each do |c| %>
+        <% if @correspondence.triggers.include?(c) %>
+          <label class="btn btn-primary active">
+          <%= check_box_tag "correspondence[triggers][]", c, 'checked' %> <%= c %>
+          </label>
+        <% else %>
+          <label class="btn btn-primary">
+          <%= check_box_tag "correspondence[triggers][]", c, nil %> <%= c %>
+          </label>
+        <% end %>
+  <% end %>
+      <%= hidden_field_tag 'correspondence[triggers][]', nil %>
+  </div><br />
+  <div class="field">
+    <%= f.label :format, 'Format(s)', :class => 'control-label' %><br/>
+  <% Correspondence::FORMAT.each do |c| %>
+        <% if @correspondence.format.include?(c) %>
+          <label class="btn btn-primary active">
+          <%= check_box_tag "correspondence[format][]", c, 'checked' %> <%= c %>
+          </label>
+        <% else %>
+          <label class="btn btn-primary">
+          <%= check_box_tag "correspondence[format][]", c, nil %> <%= c %>
+          </label>
+        <% end %>
+  <% end %>
+      <%= hidden_field_tag 'correspondence[format][]', nil %>
+  </div><br />
+  <div class="field">
+    <%= f.label :office %><br>
+    <%= f.text_field :office %>
+  </div>
+  <div class="field">
+    <%= f.label :sample_message %><br>
+    <%= f.text_area :sample_message %>
+  </div>
+  <div class="field">
+    <%= f.label :audience, 'Audience(s)', :class => 'control-label' %><br/>
+  <% Correspondence::AUDIENCE.each do |c| %>
+        <% if @correspondence.audience.include?(c) %>
+          <label class="btn btn-primary active">
+          <%= check_box_tag "correspondence[audience][]", c, 'checked' %> <%= c %>
+          </label>
+        <% else %>
+          <label class="btn btn-primary">
+          <%= check_box_tag "correspondence[audience][]", c, nil %> <%= c %>
+          </label>
+        <% end %>
+  <% end %>
+      <%= hidden_field_tag 'correspondence[audience][]', nil %>
+  </div><br />
+ <div class="field">
+   <%= f.label :comments %><br>
+   <%= f.text_area :comments %>
+ </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

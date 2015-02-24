@@ -1,0 +1,136 @@
+<%= form_for(@transaction) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, 'Name of Transaction' %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+    <div class="field">
+      <%= f.label :audience, 'Audience(s)', :class => 'control-label' %><br/>
+    <% Transaction::AUDIENCE.each do |c| %>
+          <% if @transaction.audience.include?(c) %>
+            <label class="btn btn-primary active">
+            <%= check_box_tag "transaction[audience][]", c, 'checked' %> <%= c %>
+            </label>
+          <% else %>
+            <label class="btn btn-primary">
+            <%= check_box_tag "transaction[audience][]", c, nil %> <%= c %>
+            </label>
+          <% end %>
+    <% end %>
+        <%= hidden_field_tag 'transaction[audience][]', nil %>
+    </div><br />
+  <div class="field">
+    <%= f.label :eligibility_criteria %><br>
+    <%= f.text_area :eligibility_criteria %>
+  </div>
+  <div class="field">
+    <%= f.label :determine_eligibility, 'How does someone determine if they are eligible?' %><br>
+    <%= f.text_area :determine_eligibility %>
+  </div>
+  <div class="field">
+    <%= f.label :phone, 'Can this transaction be conducted over the phone?' %><br>
+    <%= f.check_box :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number, 'Phone number' %><br>
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :call_volume, 'Call volume (per month)' %><br>
+    <%= f.text_field :call_volume %>
+  </div>
+  <div class="field">
+    <%= f.label :online, 'Check if this transaction be conducted online?' %><br>
+    <%= f.check_box :online %>
+  </div>
+  <div class="field">
+    <%= f.label :url, 'URL to conduct transaction' %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :digital_volume, 'Digital volume (per month)' %><br>
+    <%= f.text_field :digital_volume %>
+  </div>
+  <div class="field">
+    <%= f.label :in_person_ro, 'Check if this transaction be conducted in person at an RO?' %><br>
+    <%= f.check_box :in_person_ro %>
+  </div>
+  <div class="field">
+    <%= f.label :in_person_mc, 'Check if this transaction be conducted in person at an MC?' %><br>
+    <%= f.check_box :in_person_mc %>
+  </div>
+  <div class="field">
+    <%= f.label :by_mail, 'Check if this transaction be conducted by mail?' %><br>
+    <%= f.check_box :by_mail %>
+  </div>
+  <div class="field">
+    <%= f.label :mail_volume, 'Mail volume (per month)' %><br>
+    <%= f.text_field :mail_volume %>
+  </div>
+  <div class="field">
+    <%= f.label :form, 'Form for this transaction' %><br>
+    <%= f.text_field :form %>
+  </div>
+  <div class="field">
+    <%= f.label :details_url, 'URL with details about this transaction' %><br>
+    <%= f.text_field :details_url %>
+  </div>
+  <div class="field">
+    <%= f.label :office, 'Responsible office' %><br>
+    <%= f.text_field :office %>
+  </div>
+  <div class="field">
+    <%= f.label :resolution_time, 'Average Resolution Time (in days)' %><br>
+    <%= f.number_field :resolution_time %>
+  </div>
+  <div class="field">
+    <%= f.label :resolution_time_95th, 'Average Resolution Time for 95th Percentile (in days)' %><br>
+    <%= f.number_field :resolution_time_95th %>
+  </div>
+  <div class="field">
+    <%= f.label :resolution_rate, 'Average resolution rate' %><br>
+    <%= f.number_field :resolution_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :first_time_resolution_rate, 'First time resolution rate' %><br>
+    <%= f.number_field :first_time_resolution_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :request_volume, 'Total request volume (per month)' %><br>
+    <%= f.number_field :request_volume %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords, 'Relevant keywords' %><br>
+    <%= f.text_area :keywords %>
+  </div>
+  <div class="field">
+    <%= f.label :search_on_va, '# times this transaction was searched for on VA.gov (past month)' %><br>
+    <%= f.number_field :search_on_va %>
+  </div>
+  <div class="field">
+    <%= f.label :search_on_google, '# times this transaction was searched for on Google (past month)' %><br>
+    <%= f.number_field :search_on_google %>
+  </div>
+  <div class="field">
+    <%= f.label :man_hours, 'Average employee hours to process transction' %><br>
+    <%= f.number_field :man_hours %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

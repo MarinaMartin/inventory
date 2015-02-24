@@ -1,0 +1,71 @@
+%h1 Transactions Index
+
+%table
+  %tr
+    %th Name of Transaction
+    %th Description
+    %th Audience
+    %th Eligibility criteria
+    %th How does someone determine if they are eligibile?
+    %th Can this be conducted by phone?
+    %th Phone number
+    %th Call volume (per month)
+    %th Can this be conducted online?
+    %th URL
+    %th Online volume (per month)
+    %th Can this be conducted in person at an RO?
+    %th Can this be conducted in person at a Medical Center?
+    %th Can this be conducted by mail?
+    %th Mail volume (per month)
+    %th Form
+    %th URL with information about this transaction
+    %th Office responsible
+    %th Resolution time (in days)
+    %th Resolution time for 95th percentile (in days)
+    %th Resolution rate
+    %th First time resolution rate
+    %th Total request volume (per month)
+    %th Keywords
+    %th How often this transaction is searched for on VA.gov (per month)
+    %th How often this transaction is searched for on Google (per month)
+    %th Average employee hours required to process
+    %th
+    %th
+    %th
+
+  - @transactions.each do |transaction|
+    %tr
+      %td= transaction.name
+      %td= transaction.description
+      %td= transaction.audience
+      %td= transaction.eligibility_criteria
+      %td= transaction.determine_eligibility
+      %td= transaction.phone
+      %td= transaction.phone_number
+      %td= transaction.call_volume
+      %td= transaction.online
+      %td= transaction.url
+      %td= transaction.digital_volume
+      %td= transaction.in_person_ro
+      %td= transaction.in_person_mc
+      %td= transaction.by_mail
+      %td= transaction.mail_volume
+      %td= transaction.form
+      %td= transaction.details_url
+      %td= transaction.office
+      %td= transaction.resolution_time
+      %td= transaction.resolution_time_95th
+      %td= transaction.resolution_rate
+      %td= transaction.first_time_resolution_rate
+      %td= transaction.request_volume
+      %td= transaction.keywords
+      %td= transaction.search_on_va
+      %td= transaction.search_on_google
+      %td= transaction.man_hours
+      %td= link_to 'Show', transaction
+      %td= link_to 'Edit', edit_transaction_path(transaction)
+      %td= link_to 'Destroy', transaction, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Transaction', new_transaction_path

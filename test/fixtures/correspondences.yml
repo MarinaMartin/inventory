@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  triggers: MyText
+  format: MyText
+  office: MyString
+  sample_message: MyText
+  audience: MyText
+
+two:
+  subject: MyString
+  triggers: MyText
+  format: MyText
+  office: MyString
+  sample_message: MyText
+  audience: MyText

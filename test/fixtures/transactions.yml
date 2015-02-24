@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  audience: MyText
+  eligibility_criteria: MyText
+  determine_eligibility: MyText
+  phone: false
+  phone_number: MyString
+  call_volume: 1
+  online: false
+  url: MyString
+  digital_volume: 1
+  in_person_ro: false
+  in_person_mc: false
+  by_mail: false
+  mail_volume: 1
+  form: MyString
+  details_url: MyString
+  office: MyString
+  resolution_time: MyString
+  95_resolution_time: MyString
+  resolution_rate: MyString
+  first_time_resolution_rate: MyString
+  request_volume: 1
+  keywords: MyText
+  search_on_va: 1
+  search_on_google: 1
+  man_hours: 1
+
+two:
+  name: MyString
+  description: MyText
+  audience: MyText
+  eligibility_criteria: MyText
+  determine_eligibility: MyText
+  phone: false
+  phone_number: MyString
+  call_volume: 1
+  online: false
+  url: MyString
+  digital_volume: 1
+  in_person_ro: false
+  in_person_mc: false
+  by_mail: false
+  mail_volume: 1
+  form: MyString
+  details_url: MyString
+  office: MyString
+  resolution_time: MyString
+  95_resolution_time: MyString
+  resolution_rate: MyString
+  first_time_resolution_rate: MyString
+  request_volume: 1
+  keywords: MyText
+  search_on_va: 1
+  search_on_google: 1
+  man_hours: 1

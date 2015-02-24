@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @correspondence.subject %>
+</p>
+
+<p>
+  <strong>Triggers:</strong>
+  <%= @correspondence.triggers %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @correspondence.format %>
+</p>
+
+<p>
+  <strong>Office:</strong>
+  <%= @correspondence.office %>
+</p>
+
+<p>
+  <strong>Sample message:</strong>
+  <%= @correspondence.sample_message %>
+</p>
+
+<p>
+  <strong>Audience:</strong>
+  <%= @correspondence.audience %>
+</p>
+
+<%= link_to 'Edit', edit_correspondence_path(@correspondence) %> |
+<%= link_to 'Back', correspondences_path %>
